@@ -49,18 +49,20 @@ def statement_date_widget() -> date:
     return selected_date
 
 
-def get_properties() -> dict:
-    prop_dict = {}
+def get_properties() -> list[dict]:
+    prop_list = []
     try:
-        with open("template/properties.csv", "rb") as prop_file:
-            reader = csv.reader(prop_file, delimiter="\t")
+        with open("template/properties.csv") as prop_file:
+            reader = csv.reader(prop_file, delimiter="/")
             for row in reader:
-                prop_dict[row[0]] = {
-                    "property_code": row[0],
-                    "street_address": row[1],
-                    "city_state_zip": row[2],
-                }
-        return prop_dict
+                prop_list.append(
+                    {
+                        "property_code": row[0],
+                        "street_address": row[1],
+                        "city_state_zip": row[2],
+                    }
+                )
+        return prop_list
     except FileNotFoundError:
         print("Property file not found")
 

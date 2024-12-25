@@ -1,5 +1,3 @@
-import json
-
 import streamlit as st
 
 import utils
@@ -62,10 +60,9 @@ def main():
         "Upload the bookkeeping file (.xlsx)", type=["xlsx"]
     )
     st.session_state.sheet_name = st.text_input(
-        "Enter the name of the bookkeeping worksheet to use for invoicing:",
+        "Enter the name of the bookkeeping worksheet to use for invoicing (Invoices will not be generated if sheet name is unspecified):",  # noqa: E501\
         value=None,
     )
-    st.info("Invoices will not be generated if sheet name is unspecified")
 
     if st.session_state.uploaded_book:
         st.success("Bookkeeping file is uploaded")

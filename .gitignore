@@ -180,3 +180,4 @@ data/
 .vscode
 .vscode/
 *.csv
+*.xlsx
