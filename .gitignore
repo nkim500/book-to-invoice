@@ -181,3 +181,4 @@ data/
 .vscode/
 *.csv
 *.xlsx
+*.toml
