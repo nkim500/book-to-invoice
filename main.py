@@ -97,7 +97,6 @@ def main():
     water_check = st.session_state.uploaded_water or st.session_state.override_water
 
     st.session_state.generate_invoices = st.button("Generate invoices")
-    # st.session_state.upload_invoice_to_db = st.checkbox("Update database", value=True)
 
     if (
         water_check
