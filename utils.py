@@ -140,7 +140,7 @@ def generate_invoices(
         for k, v in model.items():
             ws[k] = v
         ws = remove_empty_rows(ws)
-        export_file_path = f"{export_path}{i.F4} Bill {i.F6.strftime("%b %Y")}.xlsx"
+        export_file_path = f"{export_path}{i.F4} Bill {i.F6.strftime('%b %Y')}.xlsx"
         export_file_paths.append(export_file_path)
         wb.save(export_file_path)
         wb.close()
