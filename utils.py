@@ -365,7 +365,7 @@ def serialize_invoice_input_from_book_ingest(
         parsed["date_late"] = None
 
     if not np.isnan(entry.monthly_rent) and isinstance(entry.monthly_rent, float):
-        parsed["desc_curr_rent"] = f"Lot rent for {(statement_date).strftime("%B %Y")}"
+        parsed["desc_curr_rent"] = f"Lot rent for {(statement_date).strftime('%B %Y')}"
         parsed["date_rent"] = statement_date
     else:
         parsed["desc_curr_rent"] = None
